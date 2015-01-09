@@ -5,10 +5,10 @@ app.factory('notifyService',
         return {
             showInfo: function(msg) {
                 noty({
-                        text: msg,
-                        type: 'info',
-                        layout: 'topCenter',
-                        timeout: 1000}
+                    text: msg,
+                    type: 'info',
+                    layout: 'topCenter',
+                    timeout: 1000}
                 );
             },
             showError: function(msg, serverError) {
@@ -21,8 +21,7 @@ app.factory('notifyService',
                     var modelStateErrors = serverError.modelState;
                     for (var propertyName in modelStateErrors) {
                         var errorMessages = modelStateErrors[propertyName];
-                        var trimmedName =
-                            propertyName.substr(propertyName.indexOf('.') + 1);
+                        var trimmedName = propertyName.substr(propertyName.indexOf('.') + 1);
                         for (var i = 0; i < errorMessages.length; i++) {
                             var currentError = errorMessages[i];
                             errors.push(trimmedName + ' - ' + currentError);
@@ -33,10 +32,10 @@ app.factory('notifyService',
                     msg = msg + ":<br>" + errors.join("<br>");
                 }
                 noty({
-                        text: msg,
-                        type: 'error',
-                        layout: 'topCenter',
-                        timeout: 5000}
+                    text: msg,
+                    type: 'error',
+                    layout: 'topCenter',
+                    timeout: 5000}
                 );
             }
         }
