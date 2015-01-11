@@ -18,7 +18,6 @@ app.factory('adsService',
     }
 );
 
-
 app.factory('categoriesService',
     function ($resource, baseServiceUrl) {
         var categoriesResource = $resource(

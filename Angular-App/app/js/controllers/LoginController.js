@@ -6,7 +6,7 @@ app.controller('LoginController',
             authService.login(userData,
                 function success() {
                     notifyService.showInfo("Login successful");
-                    $location.path("/");
+                    $location.path("/user/ads");
                     console.log(userData);
                 },
                 function error(err) {
